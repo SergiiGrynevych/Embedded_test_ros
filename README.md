@@ -1,24 +1,20 @@
-#########################
 ## TASK:1 ###############
-#########################
 
 ## run application: 
+cd ~
 python3 UART_ParsingGPS.py
 
 ## dependency for this app (if it is not installed):
 pip3 install pyserial
 
-
 #########################
 ## TASK:3 ###############
-#########################
-use ros2-humble
+I use ros2-humble
 
 ## dependency 
 pip3 install pyserial
 sudo apt install python3-colcon-common-extensions
 ## need to intall ros2 
-
 
 ## build
 cd ~/ros2 
