@@ -1,6 +1,9 @@
+git clone this repo.
+branch: master  
+
 # TASK:1
 
-## run application: 
+## run application (script): 
 cd ~
 python3 UART_ParsingGPS.py
 
@@ -16,8 +19,12 @@ sudo apt install python3-colcon-common-extensions
 ## need to intall ros2 
 
 ## build
-cd ~/ros2 
-colcon build --packages-select gps_uart_reader
+cd ~/ros2
+colcon build --packages-up-to gps_uart_reader 
+<!-- colcon build --packages-select gps_uart_reader
+
+colcon build --packages-select gps_position_msgs -->
+
 
 source ~/ros2/install/setup.bash
 
@@ -29,6 +36,10 @@ ros2 run gps_uart_reader gps_uart_node --ros-args -p port:=/dev/ttyS5 -p baudrat
 ros2 launch gps_uart_reader gps_uart.launch.py
 
 
-First Task: 
-node name: gps_uart_reader
+## Show interface for task 3
+ros2 interface show gps_position_msgs/msg/GpsPosition
+
+
+
+
 
