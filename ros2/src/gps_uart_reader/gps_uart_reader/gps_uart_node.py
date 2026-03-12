@@ -10,7 +10,6 @@ from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPo
 
 from gps_position_msgs.msg import GpsPosition
 
-
 def nmea_to_decimal(raw_value: str, direction: str):
     if not raw_value or not direction:
         return None
@@ -33,7 +32,6 @@ def nmea_to_decimal(raw_value: str, direction: str):
         return value
     except Exception:
         return None
-
 
 def parse_gga(parts):
     """
@@ -166,7 +164,7 @@ class GpsUartNode(Node):
         fix_quality = gga_data["fix_quality"]
 
         if lat is None or lon is None:
-            return "GPS: координати ще недоступні"
+            return "GPS: coordinates not yet available"
 
         lat_abs = abs(lat)
         lon_abs = abs(lon)
@@ -214,6 +212,9 @@ class GpsUartNode(Node):
                 self.serial_port = self.__open_serial_port()
 
                 if self.serial_port is None:
+                    self.get_logger().info(
+                        f'serial_port in None reconnect delay...'
+                    )
                     time.sleep(self.reconnect_delay)
                     continue
 
@@ -249,7 +250,6 @@ class GpsUartNode(Node):
         self.__close_serial_port()
         super().destroy_node()
 
-
 def main(args=None):
     rclpy.init(args=args)
     node = GpsUartNode()
@@ -261,7 +261,6 @@ def main(args=None):
     finally:
         node.destroy_node()
         rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()

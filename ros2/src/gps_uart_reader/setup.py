@@ -23,7 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'gps_uart_node = gps_uart_reader.gps_uart_node:main',
+            'gps_node = gps_uart_reader.gps_uart_node:main',
         ],
     },
 )

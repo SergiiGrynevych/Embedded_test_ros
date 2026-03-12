@@ -10,7 +10,6 @@ BAUDRATE = 9600
 TIMEOUT = 1.0
 RECONNECT_DELAY = 2.0
 
-
 def nmea_to_decimal_with_dir(raw_value: str, direction: str):
     """
     NMEA -> decimal degrees
@@ -40,7 +39,6 @@ def nmea_to_decimal_with_dir(raw_value: str, direction: str):
     except (ValueError, TypeError):
         return None, None
 
-
 def parse_gga(parts):
     """
     $GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47
@@ -61,7 +59,6 @@ def parse_gga(parts):
         "fix_quality": fix_quality,
         "satellites": satellites,
     }
-
 
 def format_gps_line(gga_data):
     if not gga_data:
