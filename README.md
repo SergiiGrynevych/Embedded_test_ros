@@ -82,6 +82,8 @@ chmod +x ~/Embedded_test_ros/VideoStreaming/rgb_cam_gstreamer.sh
 ./mediamtx mediamtx_gstreamer.yml
 ```
 
+## to run correctly video streamer in rgb_cam_ffmpeg.sh and rgb_cam_gstreamer.sh you need to set correctly variable DEVICE. In my case i use camera and search it by v4l2-ctl --list-devices
+
 ---
 
 ## Stream validation
