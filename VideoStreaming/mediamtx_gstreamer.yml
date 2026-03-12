@@ -1,0 +1,15 @@
+logLevel: info
+
+rtsp: true
+rtspAddress: :8554
+
+hls: true
+hlsAddress: :8888
+
+webrtc: true
+webrtcAddress: :8080
+
+paths:
+  stream:
+    runOnInit: /home/orangepi/VideoStreaming/rgb_cam_gstreamer.sh
+    runOnInitRestart: yes
