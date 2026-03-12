@@ -6,7 +6,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='gps_uart_reader',
-            executable='gps_uart_node',
+            executable='gps_node',
             name='gps_uart_node',
             output='screen',
             parameters=[

@@ -20,7 +20,6 @@ setup(
     maintainer_email='user@example.com',
     description='ROS2 node for reading GPS data from UART and publishing NavSatFix',
     license='Apache License 2.0',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'gps_node = gps_uart_reader.gps_uart_node:main',

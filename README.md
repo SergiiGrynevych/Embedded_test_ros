@@ -13,9 +13,8 @@ This repository contains instructions for:
 Clone the repository and switch to the required branch:
 
 ```bash
-git clone <REPO_URL>
-cd <REPO_FOLDER>
-git checkout master
+git clone https://github.com/SergiiGrynevych/Embedded_test_ros.git
+cd ~/Embedded_test_ros/
 ```
 
 > Replace `<REPO_URL>` and `<REPO_FOLDER>` with your actual repository values.
@@ -46,7 +45,7 @@ Optional, depending on how you validate video streaming:
 ## Run the application
 
 ```bash
-cd ~
+cd ~/Embedded_test_ros/
 python3 UART_ParsingGPS.py
 ```
 
@@ -65,7 +64,10 @@ pip3 install pyserial
 Go to the MediaMTX folder:
 
 ```bash
-cd ~/VideoStreaming/
+cd ~/Embedded_test_ros/VideoStreaming/
+chmod +x ~/Embedded_test_ros/VideoStreaming/mediamtx
+chmod +x ~/Embedded_test_ros/VideoStreaming/rgb_cam_ffmpeg.sh
+chmod +x ~/Embedded_test_ros/VideoStreaming/rgb_cam_gstreamer.sh
 ```
 
 ## Launch app using FFmpeg config
@@ -139,14 +141,14 @@ A ROS2 distribution must be installed in your system, such as:
 This will build the ROS2 interface package `gps_position_msgs` and the package `gps_uart_reader`.
 
 ```bash
-cd ~/ros2
+cd ~/Embedded_test_ros/ros2
 colcon build --packages-up-to gps_uart_reader
 ```
 
 After building, source the workspace:
 
 ```bash
-source ~/ros2/install/setup.bash
+source ~/Embedded_test_ros/ros2/install/setup.bash
 ```
 
 ---
@@ -154,8 +156,8 @@ source ~/ros2/install/setup.bash
 ## Launch with `ros2 launch`
 
 ```bash
-source ~/ros2/install/setup.bash
-cd ~/ros2
+source ~/Embedded_test_ros/ros2/install/setup.bash
+cd ~/Embedded_test_ros/ros2
 ros2 launch gps_uart_reader gps_uart.launch.py
 ```
 

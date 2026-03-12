@@ -11,5 +11,5 @@ webrtcAddress: :8080
 
 paths:
   stream:
-    runOnInit: /home/orangepi/VideoStreaming/rgb_cam_ffmpeg.sh
+    runOnInit: /home/orangepi/Embedded_test_ros/VideoStreaming/rgb_cam_ffmpeg.sh
     runOnInitRestart: yes
